@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+void main() {
+    int a[5],i,flag,search_key,start,end,middle;
+    printf("enter element");
+    for(i=0;i<5;i++)
+        scanf("%d",&a[i]);
+        printf("enter key to search");
+        scanf("%d",&search_key);
+        start=0;
+        end=5;
+        middle=(start+end)/2;
+        while(start<end){
+       
+            if(search_key==a[middle]){
+                
+            
+            printf("found");
+            flag=1;
+             
+                break;
+            }
+            else if (search_key<a[middle])
+            end=middle-1;
+            
+            else if (search_key>a[middle])
+            start=middle+1;
+            
+            middle=(start+end)/2;
+           
+        }
+        
+        if(flag==0)
+        printf("notfound");
+        
+    return 0;
+}
